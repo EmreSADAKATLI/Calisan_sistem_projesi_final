@@ -50,4 +50,6 @@ class Insan:
     def set_uyruk(self, uyruk):
         self.__uyruk = uyruk
 
-
+    #  __str__ metotu ile kullanıcı bilgileri yazdırılmalıdır.
+    def __str__(self):
+        return f"Ad: {self.__ad}, Soyad: {self.__soyad}, Yaş: {self.__yas}, Cinsiyet: {self.__cinsiyet}, Uyruk: {self.__uyruk}"
