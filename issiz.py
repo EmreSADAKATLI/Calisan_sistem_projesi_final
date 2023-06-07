@@ -7,3 +7,16 @@ class Issiz(Insan):
         self.__tecrube = tecrube
         
 
+    def get_status(self):
+        return self.__status
+
+    def set_status(self):
+        self.__status = self.statu_bul()
+
+    def get_tecrube(self):
+        return self.__tecrube
+
+    def set_tecrube(self, tecrube):
+        self.__tecrube = tecrube
+
+   
