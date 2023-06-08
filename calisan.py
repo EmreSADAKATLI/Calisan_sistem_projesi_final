@@ -34,4 +34,21 @@ class Calisan(Insan):
         return self.zam_hakki()
 
     
-   
+    def zam_hakki(self):
+        try:
+            if self.__tecrube < 2:
+                return 0 + self.__eski_maas
+            
+            elif self.__tecrube <= 4 and self.__maas < 15000:
+                return (self.__maas / self.__tecrube) + self.__eski_maas
+            
+            elif self.__tecrube > 4 and self.__maas < 25000:
+                return ((self.__maas / self.__tecrube) / 2) + self.__eski_maas
+                    
+            else:
+                return self.__eski_maas
+            
+        except Exception as e:
+            raise Exception("Hata: ", str(e))
+
+
