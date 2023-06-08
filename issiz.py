@@ -19,4 +19,15 @@ class Issiz(Insan):
     def set_tecrube(self, tecrube):
         self.__tecrube = tecrube
 
-   
+    def statu_bul(self):
+        try:
+            etkiler = {
+                "mavi yaka": self.__tecrubeler.get("mavi yaka", 0) * 0.2,
+                "beyaz yaka": self.__tecrubeler.get("beyaz yaka", 0) * 0.35,
+                "yönetici": self.__tecrubeler.get("yönetici", 0) * 0.45
+            }
+            self.__status = max(etkiler, key=etkiler.get)
+        except Exception as e:
+            raise Exception("Hata: ", str(e))
+
+ 
