@@ -30,4 +30,5 @@ class Issiz(Insan):
         except Exception as e:
             raise Exception("Hata: ", str(e))
 
- 
+    def __str__(self):
+        return f"Ad: {self.get_ad()}, Soyad: {self.get_soyad()}, En Uygun Statü: {self.__status}"
