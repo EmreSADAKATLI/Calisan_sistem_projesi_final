@@ -52,3 +52,5 @@ class Calisan(Insan):
             raise Exception("Hata: ", str(e))
 
 
+    def __str__(self):
+        return f"Ad: {self.get_ad()}, Soyad: {self.get_soyad()}, Tecrübe: {self.__tecrube}, Yeni Maaş: {self.__yeni_maas}"
