@@ -28,3 +28,7 @@ beyazyaka2 = BeyazYaka("13131313131", "Ayşe", "Yeşil", 42, "Kadın", "Türk", 
 
 calisanlar = [calisan1, calisan2, calisan3, maviyaka1, maviyaka2, beyazyaka1, beyazyaka2]
 
+
+# Boş bir veri çerçevesi oluşturulur
+df = pd.DataFrame(columns=["T.C. Kimlik No", "Ad", "Soyad", "Yaş", "Cinsiyet", "Uyruk", "Yıpranma Payı", "Teşvik Primi", "Maaş", "Yeni Maaş", "Tecrübe", "Sektör", "Grup"])
+
