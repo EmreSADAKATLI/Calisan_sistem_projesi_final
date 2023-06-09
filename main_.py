@@ -62,4 +62,7 @@ for calisan in calisanlar:
     # Append calisan data to the list of data frames
     dfs.append(pd.DataFrame(calisan_data, index=[0]))
 
+# Concatenate all data frames in the list
+df = pd.concat(dfs, ignore_index=True)
+
 
