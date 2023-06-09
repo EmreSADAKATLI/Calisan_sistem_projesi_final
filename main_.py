@@ -32,3 +32,30 @@ calisanlar = [calisan1, calisan2, calisan3, maviyaka1, maviyaka2, beyazyaka1, be
 # Boş bir veri çerçevesi oluşturulur
 df = pd.DataFrame(columns=["T.C. Kimlik No", "Ad", "Soyad", "Yaş", "Cinsiyet", "Uyruk", "Yıpranma Payı", "Teşvik Primi", "Maaş", "Yeni Maaş", "Tecrübe", "Sektör", "Grup"])
 
+# Çalışanları dolaşarak veri çerçevesine eklenirken gruplandırma ve hesaplama yapılır
+dfs = []
+for calisan in calisanlar:
+    if isinstance(calisan, BeyazYaka):
+        grup = "Beyaz Yaka"
+    elif isinstance(calisan, MaviYaka):
+        grup = "Mavi Yaka"
+    else:
+        grup = "Diğer"
+    
+    # Create a dictionary with calisan data
+    calisan_data = {
+        "T.C. Kimlik No": calisan.get_tc_no(),
+        "Ad": calisan.get_ad(),
+        "Soyad": calisan.get_soyad(),
+        "Yaş": calisan.get_yas(),
+        "Cinsiyet": calisan.get_cinsiyet(),
+        "Uyruk": calisan.get_uyruk(),
+        "Yıpranma Payı": calisan.get_yipranma_payi() if hasattr(calisan, "get_yipranma_payi") else 0,
+        "Teşvik Primi": calisan.get_tesvik_primi() if hasattr(calisan, "get_tesvik_primi") else 0,
+        "Maaş": calisan.get_eski_maas(),
+        "Yeni Maaş": calisan.get_yeni_maas(),
+        "Sektör": calisan.get_sektor(),
+        "Tecrübe": calisan.get_tecrube(),
+        "Grup": grup
+    }
+    
