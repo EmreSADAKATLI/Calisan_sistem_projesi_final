@@ -66,3 +66,5 @@ for calisan in calisanlar:
 df = pd.concat(dfs, ignore_index=True)
 
 
+df.to_csv("insanlar.csv", index=False)
+print("Veriler insanlar.csv dosyasına kaydedildi.")
