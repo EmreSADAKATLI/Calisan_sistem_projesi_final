@@ -1,10 +1,13 @@
 from calisan import Calisan
 
 class MaviYaka(Calisan):
-    def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube, maas, yipranma_payi):
-        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube, maas)
+    def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, maas, tecrube, yipranma_payi):
         self.__yipranma_payi = yipranma_payi
+        self.set_tecrube(tecrube)
+        self.set_eski_maas(maas)
         self.__yeni_maas_mavi_yaka = self.zam_hakki()
+        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube,  maas)
+        
 
     def get_yipranma_payi(self):
         return self.__yipranma_payi
