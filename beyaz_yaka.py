@@ -1,10 +1,13 @@
 from calisan import Calisan
-# Bu test branchidir
+#Bu test branchidir
 class BeyazYaka(Calisan):
     def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube, maas, tesvik_primi):
-        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube, maas)
         self.__tesvik_primi = tesvik_primi
+        self.set_tecrube(tecrube)
+        self.set_eski_maas(maas)
         self.__yeni_maas_beyaz_yaka = self.zam_hakki()
+        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube, maas)
+        
 
     def get_tesvik_primi(self):
         return self.__tesvik_primi
@@ -17,7 +20,7 @@ class BeyazYaka(Calisan):
     
     def set_yeni_maas_beyaz_yaka(self):
         self.__yeni_maas_beyaz_yaka = self.zam_hakki()
-    
+
     def zam_hakki(self):
         try:
             if self.get_tecrube() < 2:
