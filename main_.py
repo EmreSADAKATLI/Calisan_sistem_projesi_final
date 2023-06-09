@@ -59,3 +59,7 @@ for calisan in calisanlar:
         "Grup": grup
     }
     
+    # Append calisan data to the list of data frames
+    dfs.append(pd.DataFrame(calisan_data, index=[0]))
+
+
